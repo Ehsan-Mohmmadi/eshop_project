@@ -1,4 +1,5 @@
 from wsgiref.validate import validator
+from django.utils.text import slugify
 
 from django.db import models
 from django.core.validators import MaxValueValidator,MinValueValidator
@@ -19,4 +20,5 @@ class Product(models.Model):
         return f"{self.title}, {self.price}$"
 
     def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
         super().save(*args, **kwargs)
