@@ -4,6 +4,6 @@
 
 {% block content %}
     {% for product in products %}
-    	<li>{{ product.title }} / Price: {{ product.price }}</li>
+    	<li><a href={% url 'product_detail' product_id=product.id %}>{{ product.title }} / Price: {{ product.price }}</a></li>
     {% endfor %}
 {% endblock %}
