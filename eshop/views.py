@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from eshop.models import Product
 
@@ -8,6 +8,6 @@ def product_list(request):
     products = Product.objects.all()
     return render(request, 'eshop/product_list.html',{'products':products})
 
-def product_detail(request, productID):
-    product = Product.objects.get(id=productID)
+def product_detail(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
     return render(request, 'eshop/product_detail.html',{'product':product})
