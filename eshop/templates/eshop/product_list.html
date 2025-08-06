@@ -3,9 +3,7 @@
 {% block title %}Product List{% endblock %}
 
 {% block content %}
-    <ul>
-        <li><a href="#">test</a></li>
-        <li><a href="#">test</a></li>
-        <li><a href="#">test</a></li>
-    </ul>
+    {% for product in products %}
+    	<li>{{ product.title }} / Price: {{ product.price }}</li>
+    {% endfor %}
 {% endblock %}
