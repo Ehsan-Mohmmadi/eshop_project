@@ -14,5 +14,9 @@ class Product(models.Model):
     is_active = models.BooleanField(null=True)
     short_description = models.CharField(null=True, max_length=300)
     slug = SlugField(default="", null=False)
+
     def __str__(self):
         return f"{self.title}, {self.price}$"
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
