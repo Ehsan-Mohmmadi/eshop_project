@@ -14,7 +14,7 @@ class Product(models.Model):
     rating = models.IntegerField(null=True, validators = [MinValueValidator(0), MaxValueValidator(5)])
     is_active = models.BooleanField(null=True)
     short_description = models.CharField(null=True, max_length=300)
-    slug = SlugField(default="", null=False, editable=False)
+    slug = SlugField(default="", null=False,blank=True)
 
     def __str__(self):
         return f"{self.title}, {self.price}$"
