@@ -10,12 +10,14 @@ from django.db.models import SlugField
 
 class ProductCategory(models.Model):
     title = models.CharField(max_length=120, verbose_name="Subtitle")
+    url_title = models.CharField(max_length=120, verbose_name="URL Subtitle")
 
     def __str__(self):
         return self.title
 
 class Product(models.Model):
     title = models.CharField(max_length=300)
+    category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE) 
     price = models.IntegerField()
     rating = models.IntegerField(null=True, validators = [MinValueValidator(0), MaxValueValidator(5)])
     is_active = models.BooleanField(null=True)
