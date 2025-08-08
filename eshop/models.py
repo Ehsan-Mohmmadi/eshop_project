@@ -8,6 +8,12 @@ from django.db.models import SlugField
 
 # Create your models here.
 
+class ProductCategory(models.Model):
+    title = models.CharField(max_length=120, verbose_name="Subtitle")
+
+    def __str__(self):
+        return self.title
+
 class Product(models.Model):
     title = models.CharField(max_length=300)
     price = models.IntegerField()
