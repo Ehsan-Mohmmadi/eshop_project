@@ -34,3 +34,7 @@ class Product(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super().save(*args, **kwargs)
+
+    class Meta:
+        verbose_name = "Product"
+        verbose_name_plural = "Products"
