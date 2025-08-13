@@ -12,6 +12,10 @@ class ProductCategory(models.Model):
     title = models.CharField(max_length=120, verbose_name="Subtitle")
     url_title = models.CharField(max_length=120, verbose_name="URL Subtitle")
 
+    class Meta:
+        verbose_name = "Category"
+        verbose_name_plural = "Categories"
+
     def __str__(self):
         return self.title
 
