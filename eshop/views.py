@@ -5,7 +5,7 @@ from eshop.models import Product
 
 # Create your views here.
 def product_list(request):
-    products = Product.objects.all()
+    products = Product.objects.all().order_by('price')
     return render(request, 'eshop/product_list.html',{'products':products})
 
 def product_detail(request, slug):
