@@ -1,9 +1,0 @@
-{% extends 'base.html' %}
-
-{% block title %}Product List{% endblock %}
-
-{% block content %}
-    {% for product in products %}
-    	<li><a href={% url 'product_detail' slug=product.slug %}>{{ product.title }} / Price: {{ product.price }}</a></li>
-    {% endfor %}
-{% endblock %}
