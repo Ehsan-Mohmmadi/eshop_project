@@ -16,4 +16,5 @@ class ContactForm(forms.Form):
         label="موضوع",
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'موضوع'})
     )
-    message = forms.CharField(widget=forms.Textarea)
+    message = forms.CharField(
+        widget=forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'پیام شما','id':'message'}))

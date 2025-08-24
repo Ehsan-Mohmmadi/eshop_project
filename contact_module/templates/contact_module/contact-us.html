@@ -24,7 +24,7 @@
                                 <p class="alert alert-warning">لطفا ایمیل خود را وارد نمایید</p>
                             {% endif %}
 
-                            <div class="col-md-6 form-group">
+                            <div class="col-md-6 form-group {% if contact_form.full_name.errors%}text-danger{% endif %} ">
                                 {{ contact_form.full_name }}
                                 {{ contact_form.full_name.errors }}
                             </div>
@@ -37,6 +37,11 @@
                             <div class="col-md-12 form-group">
                                 {{ contact_form.subject }}
                                 {{ contact_form.subject.errors }}
+                            </div>
+
+                            <div class="col-md-12 form-group">
+                                {{ contact_form.message }}
+                                {{ contact_form.message.errors }}
                             </div>
 
 
