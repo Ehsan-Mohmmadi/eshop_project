@@ -1,8 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import ContactForm
 from .models import ContactUs
-
-
 # Create your views here.
 
 def contact_us(request):
