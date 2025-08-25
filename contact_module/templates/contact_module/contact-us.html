@@ -25,8 +25,8 @@
                             {% endif %}
 
                             <div class="col-md-6 form-group {% if contact_form.full_name.errors%}text-danger{% endif %} ">
-                                {{ contact_form.full_name }}
-                                {{ contact_form.full_name.errors }}
+                                {{ contact_form.name }}
+                                {{ contact_form.name.errors }}
                             </div>
 
                             <div class="col-md-6 form-group">
@@ -35,8 +35,8 @@
                             </div>
 
                             <div class="col-md-12 form-group">
-                                {{ contact_form.subject }}
-                                {{ contact_form.subject.errors }}
+                                {{ contact_form.title }}
+                                {{ contact_form.title.errors }}
                             </div>
 
                             <div class="col-md-12 form-group">
